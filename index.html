@@ -2,6 +2,8 @@
     <head><title></title>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript">
+        
+        
       // This will generate the text file content based on the form data
       function buildData(){
         var txtData = "Name: "+$("#nameField").val()+
@@ -16,14 +18,14 @@
         $("#formToSave").submit(function(event){
           event.preventDefault();
           var txtData = buildData();
-          window.location.href="data:application/octet-stream;base64,"+Base64.encode(txtData);
+          window.location.href="data:application/octet-stream;base64,"+txtData;
         });
 
         // This will act when the submit LINK is clicked
         $("#submitLink").click(function(event){
           var txtData = buildData();
           $(this).attr('download','sugguestedName.txt')
-            .attr('href',"data:application/octet-stream;base64,"+txtData);
+            .attr('href',"data:test.txt;base64,"+txtData);
         });
       });
     </script>
