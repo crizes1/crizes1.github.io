@@ -1,7 +1,22 @@
-<?
 
-$client_id = '8183767';
-$scope = 'offline,messages'
-?>
 
-<a href="https://oauth.vk.com/authorize?client_id=<?=$client_id;?>&display=page&redirect_uri=https://oauth.vk.com/blank.html&scope=<?=$scope;?>&response_type=token&v=5.37">Push the button</a>
+
+ <script type="text/javascript">
+  const options = {
+  method: 'POST',
+  headers: {Accept: 'application/json', 'Content-Type': 'application/json'},
+  body: JSON.stringify({
+    text: 'Required',
+    parse_mode: 'Markdown',
+    disable_web_page_preview: false,
+    disable_notification: false,
+    reply_to_message_id: null,
+    chat_id: '@Testsitechanel'
+  })
+};
+
+fetch('https://api.telegram.org/bot5412101158%3AAAHhM8zltgoLXWUs2d8Z8_gCF88WuUZTEqE/sendMessage', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+</script>
